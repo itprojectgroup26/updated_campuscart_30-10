@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #0B69FF; /* blue thumb */
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Tailwind Gray-200 */
+}
+
+.curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.curve .shape-fill {
+  fill: #ffffff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .curve svg {
+    width: calc(100% + 1.3px);
+    height: 50px;
+  }
+}
+
+.curve2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curve2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.curve2 .shape-fill {
+  fill: #cad2c5;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .curve2 svg {
+    width: calc(100% + 1.3px);
+    height: 100px;
+  }
+}
+@layer base {
+  :root {
+    /* light theme: refined blue / red / white */
+    --sidebar-background: 0 0% 100%; /* white */
+    --sidebar-foreground: 220 13% 11%; /* neutral text */
+    --sidebar-primary: 218 100% 53%; /* bright blue (~#0B69FF) */
+    --sidebar-primary-foreground: 0 0% 100%; /* white */
+    --sidebar-accent: 350 78% 48%; /* warm red (~#D7263D) */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 218 100% 60%;
+  }
+  .dark {
+    /* dark mode: keep brand accents but darker */
+    --sidebar-background: 222 12% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 218 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 350 78% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 10% 16%;
+    --sidebar-ring: 218 100% 52%;
+  }
+}
